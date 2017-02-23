@@ -7,9 +7,15 @@
 		<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
 		<script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
 		<script type="text/javascript" src="js/typed.min.js"></script>
+		<script>
+			$(window).on('load', function() {
+				// Animate loader off screen
+				$(".se-pre-con").fadeOut("slow");;
+			});
+		</script>
 	</head>
 	<body>
-
+		<div class="se-pre-con"></div>
 		<div id="fullpage">
 
 	    <div class="section homepage">
