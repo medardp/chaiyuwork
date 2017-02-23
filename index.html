@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="js/jquery.easings.min.js"></script>
+		<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
+		<script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+		<script type="text/javascript" src="js/typed.min.js"></script>
+	</head>
+	<body>
+
+		<div id="fullpage">
+
+	    <div class="section homepage">
+
+	    	<div class="container">
+
+			    <div id="title">
+		    		<img id="VCimage" src="img/gd.jpeg" class="js-fade fade-in is-paused" 	/>	    	
+			    </div>
+	
+			    <div id="content">
+	
+			    	<div class="img-chai">
+				    	<img id="chai" src="img/chai.png" />
+			    	</div>
+	
+			    	<div class="introduction-home">
+			    		<div class="introduction"></div>
+			    	</div>
+	
+			    	<div id="arrow-down" style="display:none;">
+						  <img src="img/pulse-arrow.png" />
+						</div>	    	
+	
+			    </div>
+		    </div>
+	    </div>
+	    <div class="section">Some section</div>
+	    <div class="section">Some section</div>
+	    <div class="section">Some section</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+    		$('#fullpage').fullpage({
+    			verticalCentered: false
+    		});
+    		move('#chai')
+  				.translate(1000)
+  				.duration('2s')
+  				.end(function() {
+						var el = document.querySelector('.js-fade');
+						if (el.classList.contains('is-paused')){
+	  					el.classList.remove('is-paused');
+  						setTimeout(function() {
+								$(".introduction").typed({
+			  					strings: ["Hi, I’m Chai Yuxin from China and I’m 22<br />Here are some works i have done<br />Thank you for your time"],
+			  					typeSpeed: 0,
+			  					showCursor: false,
+			  					callback: function() {
+			  						setTimeout(function() {
+			  							document.getElementById("arrow-down").style.display = "block";
+			  						}, 500);
+			  					}
+								});
+
+  						}, 1000);
+
+						}  					
+  				});
+				});
+		</script>
+	</body>
+	<script type="text/javascript" src="js/move.js"></script>
+</html>
