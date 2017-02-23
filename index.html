@@ -9,8 +9,32 @@
 		<script type="text/javascript" src="js/typed.min.js"></script>
 		<script>
 			$(window).on('load', function() {
-				// Animate loader off screen
-				$(".se-pre-con").fadeOut("slow");;
+				$(".se-pre-con").fadeOut("slow", function() {
+	    		$('#fullpage').fullpage({
+	    			verticalCentered: false
+	    		});
+	    		move('#chai')
+	  				.translate(1000)
+	  				.duration('2s')
+	  				.end(function() {
+							var el = document.querySelector('.js-fade');
+							if (el.classList.contains('is-paused')){
+		  					el.classList.remove('is-paused');
+	  						setTimeout(function() {
+									$(".introduction").typed({
+				  					strings: ["Hi, I’m Chai Yuxin from China and I’m 22<br />Here are some works i have done<br />Thank you for your time"],
+				  					typeSpeed: 0,
+				  					showCursor: false,
+				  					callback: function() {
+				  						setTimeout(function() {
+				  							document.getElementById("arrow-down").style.display = "block";
+				  						}, 500);
+				  					}
+									});
+	  						}, 1000);
+							}  					
+	  				});
+				});
 			});
 		</script>
 	</head>
@@ -48,34 +72,7 @@
 	    <div class="section">Some section</div>
 		</div>
 		<script>
-			$(document).ready(function() {
-    		$('#fullpage').fullpage({
-    			verticalCentered: false
-    		});
-    		move('#chai')
-  				.translate(1000)
-  				.duration('2s')
-  				.end(function() {
-						var el = document.querySelector('.js-fade');
-						if (el.classList.contains('is-paused')){
-	  					el.classList.remove('is-paused');
-  						setTimeout(function() {
-								$(".introduction").typed({
-			  					strings: ["Hi, I’m Chai Yuxin from China and I’m 22<br />Here are some works i have done<br />Thank you for your time"],
-			  					typeSpeed: 0,
-			  					showCursor: false,
-			  					callback: function() {
-			  						setTimeout(function() {
-			  							document.getElementById("arrow-down").style.display = "block";
-			  						}, 500);
-			  					}
-								});
 
-  						}, 1000);
-
-						}  					
-  				});
-				});
 		</script>
 	</body>
 	<script type="text/javascript" src="js/move.js"></script>
