@@ -89,33 +89,6 @@ body {
   right: 0px;
 }
 
-/*#VCimage {
-  width: 70%;
-  display: block;
-  margin: auto;
-  top: -500px;
-  position: absolute;
-  right: 15%;
-}
-
-#chai {
-  position: absolute;
-  bottom: 0;
-  width: 40%;
-  left: -1000px;
-  min-width: 500px;
-}
-
-#header-img {
-  height: 200px;
-}
-
-.introduction {
-  bottom: 30%;
-  right: 20%;
-  position: absolute;
-}*/
-
 #arrow-down {
   position: absolute;
   bottom: 50px;
@@ -134,3 +107,24 @@ body {
     50% { opacity: 1.0; }
     to { opacity: 0.2; }
 } 
+
+.menu-page ul {
+  text-align: center;
+}
+
+.menu-page ul li {
+  width: 33%;
+  text-align: center;
+  float: none;
+  margin-bottom: -1px;
+  display: inline-block;
+}
+
+.menu-page ul li a {
+  color: rgb(92, 80, 73);
+  font-family: Helvetica;
+}
+
+.aboutme .menu-page ul li {
+  width: 24%;  
+}

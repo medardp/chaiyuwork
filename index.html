@@ -9,42 +9,15 @@
 		<p id="loading" class="introduction">LOAD</p>
 		<link rel="stylesheet" type="text/css" href="css/jquery.fullpage.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.easings.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/scrolloverflow.min.js"></script>
 		<script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
 		<script type="text/javascript" src="js/typed.min.js"></script>
-		<script>
-			document.getElementById("loading").style.marginTop = '-10000px';
-			$(window).on('load', function() {
-				$(".se-pre-con").fadeOut("slow", function() {
-	    		$('#fullpage').fullpage({
-	    			verticalCentered: false
-	    		});
-	    		move('#chai')
-	  				.translate(1000)
-	  				.duration('2s')
-	  				.end(function() {
-							var el = document.querySelector('.js-fade');
-							if (el.classList.contains('is-paused')){
-		  					el.classList.remove('is-paused');
-	  						setTimeout(function() {
-									$(".introduction").typed({
-				  					strings: ["Hi, I’m Chai Yuxin from China and I’m 22<br />Here are some works i have done<br />Thank you for your time"],
-				  					typeSpeed: 0,
-				  					showCursor: false,
-				  					callback: function() {
-				  						setTimeout(function() {
-				  							document.getElementById("arrow-down").style.display = "block";
-				  						}, 500);
-				  					}
-									});
-	  						}, 1000);
-							}  					
-	  				});
-				});
-			});
-		</script>
+		<script type="text/javascript" src="js/move.js"></script>
+
 	</head>
 	<body>
 		<div class="se-pre-con"></div>
@@ -75,13 +48,104 @@
 			    </div>
 		    </div>
 	    </div>
-	    <div class="section">Some section</div>
-	    <div class="section">Some section</div>
-	    <div class="section">Some section</div>
+
+
+
+
+	    <div class="section work">
+
+		    <div class="menu-page">
+		    <!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+					  <li class="nav-item">
+					    <a class="nav-link" data-toggle="tab" href="#all" role="tab">All</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" data-toggle="tab" href="#logos" role="tab">Logos</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" data-toggle="tab" href="#vi" role="tab">Vi</a>
+					  </li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+					  <div class="tab-pane" id="all" role="tabpanel">All</div>
+					  <div class="tab-pane" id="logos" role="tabpanel">Logo</div>
+					  <div class="tab-pane" id="vi" role="tabpanel">Vi</div>
+					</div>
+		    </div>	    
+	    </div>
+
+
+
+
+	    <div class="section aboutme">
+	    
+		    <div class="menu-page">
+		    <!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+					  <li class="nav-item">
+					    <a class="nav-link" data-toggle="tab" href="#experience" role="tab">Experience</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" data-toggle="tab" href="#rewards" role="tab">Rewards</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" data-toggle="tab" href="#skills" role="tab">Skills</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link" data-toggle="tab" href="#contact" role="tab">Contact Me</a>
+					  </li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+					  <div class="tab-pane" id="experience" role="tabpanel">All</div>
+					  <div class="tab-pane" id="rewards" role="tabpanel">Logo</div>
+					  <div class="tab-pane" id="skills" role="tabpanel">Skills</div>
+					  <div class="tab-pane" id="contact" role="tabpanel">Contact Me</div>
+					</div>
+		    </div>
+
+
+
+	    </div>
 		</div>
 		<script>
 
 		</script>
 	</body>
-	<script type="text/javascript" src="js/move.js"></script>
+	<script>
+	document.getElementById("loading").style.marginTop = '-10000px';
+	$(window).on('load', function() {
+		$(".se-pre-con").fadeOut("slow", function() {
+  		$('#fullpage').fullpage({
+  			verticalCentered: false
+  		});
+  		move('#chai')
+				.translate(1000)
+				.duration('2s')
+				.end(function() {
+					var el = document.querySelector('.js-fade');
+					if (el.classList.contains('is-paused')){
+  					el.classList.remove('is-paused');
+						setTimeout(function() {
+							$(".introduction").typed({
+		  					strings: ["Hi, I’m Chai Yuxin from China and I’m 22<br />Here are some works i have done<br />Thank you for your time"],
+		  					typeSpeed: 0,
+		  					showCursor: false,
+		  					callback: function() {
+		  						setTimeout(function() {
+		  							document.getElementById("arrow-down").style.display = "block";
+		  						}, 500);
+		  					}
+							});
+						}, 1000);
+					}  					
+				});
+		});
+	});
+</script>
+
 </html>
